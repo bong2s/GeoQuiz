@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://bh2xo7ee25v8n"]
+
+[ext_resource type="Texture2D" uid="uid://dkvebp35ioohd" path="res://floor.png" id="1_ig7tw"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ig7tw"]
+size = Vector2(8, 30)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0xm2m"]
+albedo_texture = ExtResource("1_ig7tw")
+
+[sub_resource type="BoxMesh" id="BoxMesh_5l5bu"]
+size = Vector3(0.3, 2.5, 30)
+
+[node name="Main" type="Node3D" unique_id=1676428021]
+
+[node name="Floor" type="MeshInstance3D" parent="." unique_id=1365578037]
+mesh = SubResource("PlaneMesh_ig7tw")
+surface_material_override/0 = SubResource("StandardMaterial3D_0xm2m")
+
+[node name="wallLeft" type="MeshInstance3D" parent="." unique_id=137777526]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.85, 1.25, 0)
+mesh = SubResource("BoxMesh_5l5bu")
+
+[node name="wallRight" type="MeshInstance3D" parent="." unique_id=1118981165]
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 1, 3.85, 1.25, 0)
+mesh = SubResource("BoxMesh_5l5bu")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=405097706]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 10)
+current = true
