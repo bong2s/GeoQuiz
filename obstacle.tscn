@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bolyu353r7fpf"]
+
+[ext_resource type="Script" uid="uid://cs65ca4t4bca8" path="res://obstacle.gd" id="1_sl1jc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pb6uj"]
+size = Vector2(92.25, 88)
+
+[node name="obstacle" type="Area2D" unique_id=1141364290]
+position = Vector2(-22, -22)
+script = ExtResource("1_sl1jc")
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=468013631]
+position = Vector2(-140.51863, -81.05406)
+scale = Vector2(1.0571628, 1.1891893)
+color = Color(0.8648853, 0.94198966, 0, 1)
+polygon = PackedVector2Array(134, 69, 219, 69, 219, 143, 134, 143)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1052258254]
+position = Vector2(47, 44)
+shape = SubResource("RectangleShape2D_pb6uj")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
